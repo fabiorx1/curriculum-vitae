@@ -307,313 +307,332 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         decoration: BoxDecoration(
           color: Colors.orange.shade50,
         ),
-        child: Center(
-          child: ListView(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: header(),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 8.0,
-                ),
-                child: ExpansionTile(
-                  textColor: royalblue,
-                  iconColor: royalblue,
-                  expandedCrossAxisAlignment: CrossAxisAlignment.start,
-                  childrenPadding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                  ),
-                  title: Text(
-                    strings['skills']![lang]!,
-                    style: const TextStyle(
-                      fontSize: 28,
+        child: Column(
+          children: [
+            header(),
+            Flexible(
+              child: ListView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0,
                     ),
-                  ),
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 6,
+                    child: ExpansionTile(
+                      textColor: royalblue,
+                      iconColor: royalblue,
+                      expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                      childrenPadding: const EdgeInsets.symmetric(
+                        horizontal: 16.0,
                       ),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: DecoratedBox(
-                              decoration: BoxDecoration(
-                                  color: royalblue, shape: BoxShape.circle),
-                              child: Padding(
+                      title: Text(
+                        strings['skills']![lang]!,
+                        style: const TextStyle(
+                          fontSize: 28,
+                        ),
+                      ),
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 6,
+                          ),
+                          child: Row(
+                            children: [
+                              Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Center(
-                                    child: Icon(
-                                  Icons.star_border_rounded,
-                                  color: Colors.orange.shade200,
-                                )),
+                                child: DecoratedBox(
+                                  decoration: BoxDecoration(
+                                      color: royalblue, shape: BoxShape.circle),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Center(
+                                        child: Icon(
+                                      Icons.star_border_rounded,
+                                      color: Colors.orange.shade200,
+                                    )),
+                                  ),
+                                ),
                               ),
-                            ),
+                              Flexible(
+                                child: Text(
+                                  strings['skills3']![lang]!,
+                                  style: const TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ],
                           ),
-                          Flexible(
-                            child: Text(
-                              strings['skills3']![lang]!,
-                              style: const TextStyle(
-                                  fontSize: 24, fontWeight: FontWeight.bold),
-                            ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 6,
                           ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 6,
-                      ),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: DecoratedBox(
-                              decoration: BoxDecoration(
-                                  color: Colors.orange.shade200,
-                                  shape: BoxShape.circle),
-                              child: Padding(
+                          child: Row(
+                            children: [
+                              Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Center(
-                                    child: Icon(
-                                  Icons.star_border_rounded,
-                                  color: royalblue,
-                                )),
+                                child: DecoratedBox(
+                                  decoration: BoxDecoration(
+                                      color: Colors.orange.shade200,
+                                      shape: BoxShape.circle),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Center(
+                                        child: Icon(
+                                      Icons.star_border_rounded,
+                                      color: royalblue,
+                                    )),
+                                  ),
+                                ),
                               ),
-                            ),
+                              Flexible(
+                                child: Text(
+                                  strings['skills1']![lang]!,
+                                  style: const TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ],
                           ),
-                          Flexible(
-                            child: Text(
-                              strings['skills1']![lang]!,
-                              style: const TextStyle(
-                                  fontSize: 24, fontWeight: FontWeight.bold),
-                            ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 6,
                           ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 6,
-                      ),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: DecoratedBox(
-                              decoration: BoxDecoration(
-                                  color: Colors.orange.shade200,
-                                  shape: BoxShape.circle),
-                              child: Padding(
+                          child: Row(
+                            children: [
+                              Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Center(
-                                    child: Icon(
-                                  Icons.star_border_rounded,
-                                  color: royalblue,
-                                )),
+                                child: DecoratedBox(
+                                  decoration: BoxDecoration(
+                                      color: Colors.orange.shade200,
+                                      shape: BoxShape.circle),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Center(
+                                        child: Icon(
+                                      Icons.star_border_rounded,
+                                      color: royalblue,
+                                    )),
+                                  ),
+                                ),
                               ),
+                              Flexible(
+                                child: Text(
+                                  strings['skills2']![lang]!,
+                                  style: const TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0,
+                    ),
+                    child: ExpansionTile(
+                      textColor: royalblue,
+                      iconColor: royalblue,
+                      expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                      childrenPadding: const EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                      ),
+                      title: Text(
+                        strings['schooling']![lang]!,
+                        style: const TextStyle(
+                          fontSize: 28,
+                        ),
+                      ),
+                      children: [
+                        // Padding(
+                        //   padding: const EdgeInsets.symmetric(
+                        //     vertical: 6,
+                        //   ),
+                        //   child: infRow('assets/munhoz.jpeg', 'schooling1h', [
+                        //     'schooling1b',
+                        //     'schooling1c',
+                        //     'schooling1f',
+                        //   ]),
+                        // ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 6,
+                          ),
+                          child: infRow('assets/unifei.png', 'schooling2h', [
+                            'schooling2b',
+                            'schooling2c',
+                            'schooling2f',
+                          ]),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0,
+                    ),
+                    child: ExpansionTile(
+                      textColor: royalblue,
+                      iconColor: royalblue,
+                      expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                      childrenPadding: const EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                      ),
+                      title: Text(
+                        strings['general']![lang]!,
+                        style: const TextStyle(
+                          fontSize: 28,
+                        ),
+                      ),
+                      children: [
+                        // Padding(
+                        //   padding: const EdgeInsets.symmetric(
+                        //     vertical: 6,
+                        //   ),
+                        //   child: infRow('assets/bvrbunny.jpg', 'general3h', [
+                        //     'general3b',
+                        //     'general3c',
+                        //     'general3f',
+                        //   ]),
+                        // ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 6,
+                          ),
+                          child: infRow('assets/aqualab.jpg', 'general5h', [
+                            'general5b',
+                            'general5c',
+                            'general5f',
+                            'general5d',
+                          ]),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 6,
+                          ),
+                          child:
+                              infRow('assets/deeplearning.png', 'general4h', [
+                            'general4b',
+                            'general4c',
+                            'general4f',
+                            'general4d',
+                          ]),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 6,
+                          ),
+                          child: infRow('assets/aiesec.jpg', 'general1h', [
+                            'general1b',
+                            'general1c',
+                            'general1f',
+                          ]),
+                        ),
+
+                        // Padding(
+                        //   padding: const EdgeInsets.symmetric(
+                        //     vertical: 6,
+                        //   ),
+                        //   child: infRow('assets/volun.jpg', 'general2h', [
+                        //     'general2b',
+                        //     'general2c',
+                        //     'general2f',
+                        //   ]),
+                        // ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0,
+                    ),
+                    child: ExpansionTile(
+                      textColor: royalblue,
+                      iconColor: royalblue,
+                      expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                      childrenPadding: const EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                      ),
+                      title: Text(
+                        strings['professional']![lang]!,
+                        style: const TextStyle(
+                          fontSize: 28,
+                        ),
+                      ),
+                      children: [
+                        // Padding(
+                        //   padding: const EdgeInsets.symmetric(
+                        //     vertical: 6,
+                        //   ),
+                        //   child: infRow('assets/food.jpeg', 'professional3h', [
+                        //     'professional3b',
+                        //     'professional3c',
+                        //     'professional3f',
+                        //     'professional3d',
+                        //   ]),
+                        // ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 6,
+                          ),
+                          child: infRow(
+                              'assets/autoponia.jpeg', 'professional1h', [
+                            'professional1b',
+                            'professional1c',
+                            'professional1f',
+                            'professional1d',
+                          ]),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 6,
+                          ),
+                          child:
+                              infRow('assets/wattio.jpeg', 'professional2h', [
+                            'professional2b',
+                            'professional2c',
+                            'professional2f',
+                            'professional2d',
+                          ]),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Material(
+                      color: !_liked ? royalblue : Colors.orange,
+                      shape: const CircleBorder(),
+                      elevation: 32,
+                      child: Center(
+                        child: InkWell(
+                          customBorder: const CircleBorder(),
+                          onTap: () {
+                            setState(() {
+                              _liked = !_liked;
+                            });
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(
+                              Icons.favorite,
+                              color: !_liked ? Colors.white : Colors.black,
                             ),
                           ),
-                          Flexible(
-                            child: Text(
-                              strings['skills2']![lang]!,
-                              style: const TextStyle(
-                                  fontSize: 24, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 8.0,
-                ),
-                child: ExpansionTile(
-                  textColor: royalblue,
-                  iconColor: royalblue,
-                  expandedCrossAxisAlignment: CrossAxisAlignment.start,
-                  childrenPadding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                  ),
-                  title: Text(
-                    strings['schooling']![lang]!,
-                    style: const TextStyle(
-                      fontSize: 28,
-                    ),
-                  ),
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 6,
-                      ),
-                      child: infRow('assets/munhoz.jpeg', 'schooling1h', [
-                        'schooling1b',
-                        'schooling1c',
-                        'schooling1f',
-                      ]),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 6,
-                      ),
-                      child: infRow('assets/unifei.png', 'schooling2h', [
-                        'schooling2b',
-                        'schooling2c',
-                        'schooling2f',
-                      ]),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 8.0,
-                ),
-                child: ExpansionTile(
-                  textColor: royalblue,
-                  iconColor: royalblue,
-                  expandedCrossAxisAlignment: CrossAxisAlignment.start,
-                  childrenPadding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                  ),
-                  title: Text(
-                    strings['personal']![lang]!,
-                    style: const TextStyle(
-                      fontSize: 28,
-                    ),
-                  ),
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 6,
-                      ),
-                      child: infRow('assets/bvrbunny.jpg', 'personal3h', [
-                        'personal3b',
-                        'personal3c',
-                        'personal3f',
-                      ]),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 6,
-                      ),
-                      child: infRow('assets/aiesec.jpg', 'personal1h', [
-                        'personal1b',
-                        'personal1c',
-                        'personal1f',
-                      ]),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 6,
-                      ),
-                      child: infRow('assets/deeplearning.png', 'personal4h', [
-                        'personal4b',
-                        'personal4c',
-                        'personal4f',
-                        'personal4d',
-                      ]),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 6,
-                      ),
-                      child: infRow('assets/volun.jpg', 'personal2h', [
-                        'personal2b',
-                        'personal2c',
-                        'personal2f',
-                      ]),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 8.0,
-                ),
-                child: ExpansionTile(
-                  textColor: royalblue,
-                  iconColor: royalblue,
-                  expandedCrossAxisAlignment: CrossAxisAlignment.start,
-                  childrenPadding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                  ),
-                  title: Text(
-                    strings['professional']![lang]!,
-                    style: const TextStyle(
-                      fontSize: 28,
-                    ),
-                  ),
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 6,
-                      ),
-                      child: infRow('assets/food.jpeg', 'professional3h', [
-                        'professional3b',
-                        'professional3c',
-                        'professional3f',
-                        'professional3d',
-                      ]),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 6,
-                      ),
-                      child: infRow('assets/autoponia.jpeg', 'professional1h', [
-                        'professional1b',
-                        'professional1c',
-                        'professional1f',
-                        'professional1d',
-                      ]),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 6,
-                      ),
-                      child: infRow('assets/wattio.jpeg', 'professional2h', [
-                        'professional2b',
-                        'professional2c',
-                        'professional2f',
-                        'professional2d',
-                      ]),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Material(
-                  color: !_liked ? royalblue : Colors.orange,
-                  shape: const CircleBorder(),
-                  elevation: 32,
-                  child: Center(
-                    child: InkWell(
-                      customBorder: const CircleBorder(),
-                      onTap: () {
-                        setState(() {
-                          _liked = !_liked;
-                        });
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.favorite,
-                          color: !_liked ? Colors.white : Colors.black,
                         ),
                       ),
                     ),
                   ),
-                ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
