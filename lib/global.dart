@@ -186,8 +186,8 @@ const Map<String, Map<String, String>> strings = {
     'link': 'http://www.wattio.com.br/'
   },
   'professional2b': {
-    'br': 'Desenvolvedor de Software',
-    'us': 'Software Developer',
+    'br': 'Desenvolvedor & Analista de Software',
+    'us': 'Software Developer & Analyst',
   },
   'professional2c': {
     'br': 'Itajubá, MG - Brasil',
