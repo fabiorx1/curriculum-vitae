@@ -76,8 +76,8 @@ const Map<String, Map<String, String>> strings = {
     'us': 'Mexico City, MX - Mexico',
   },
   'general1f': {
-    'br': 'de Dez/2019 a Jan/2022',
-    'us': 'from Dec/2019 to Jan/2022',
+    'br': 'de Dez/2019 a Jan/2020',
+    'us': 'from Dec/2019 to Jan/2020',
   },
   // 'general2h': {
   //   'br': 'Volun Produções',
