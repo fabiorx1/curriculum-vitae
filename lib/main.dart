@@ -72,6 +72,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   }
 
   Widget header() {
+    final size = MediaQuery.of(context).size;
+    final isMobile = size.width < 526;
     return Material(
       color: Color.lerp(
         Colors.orange.shade50,
@@ -137,89 +139,16 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0),
-              child: SizedBox(
-                child: Column(
+            Visibility(
+              visible: !isMobile,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: Flex(
+                  direction: Axis.vertical,
                   // crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Row(
-                      children: [
-                        const Text(
-                          'EN-US',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                          ),
-                        ),
-                        Switch(
-                            value: lang == 'br',
-                            activeColor: Colors.orange.shade300,
-                            inactiveThumbColor: Colors.orange.shade300,
-                            onChanged: (value) {
-                              setState(() {
-                                lang = lang == 'br' ? 'us' : 'br';
-                              });
-                            }),
-                        const Text(
-                          'PT-BR',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: InkWell(
-                        onTap: () {
-                          html.window.open(
-                              'https://www.linkedin.com/in/fabio-ramalho-46a90b174',
-                              '');
-                        },
-                        child: DecoratedBox(
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Center(
-                              child: Image.asset(
-                                'assets/linkedin.png',
-                                height: 32,
-                                width: 32,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: InkWell(
-                        onTap: () {
-                          html.window.open('https://github.com/fabiorx1', '');
-                        },
-                        child: DecoratedBox(
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Center(
-                              child: Image.asset(
-                                'assets/git.png',
-                                height: 32,
-                                width: 32,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    switchLanguage(),
+                    gitHubAndLinkedIn(),
                   ],
                 ),
               ),
@@ -227,6 +156,95 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           ],
         ),
       ),
+    );
+  }
+
+  Flex gitHubAndLinkedIn({direction = Axis.vertical}) {
+    return Flex(
+      direction: direction,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: InkWell(
+            onTap: () {
+              html.window.open(
+                  'https://www.linkedin.com/in/fabio-ramalho-46a90b174', '');
+            },
+            child: DecoratedBox(
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: Image.asset(
+                    'assets/linkedin.png',
+                    height: 32,
+                    width: 32,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: InkWell(
+            onTap: () {
+              html.window.open('https://github.com/fabiorx1', '');
+            },
+            child: DecoratedBox(
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: Image.asset(
+                    'assets/git.png',
+                    height: 32,
+                    width: 32,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row switchLanguage({textColor = Colors.white}) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          'EN-US',
+          style: TextStyle(
+            color: textColor,
+            fontSize: 16,
+          ),
+        ),
+        Switch(
+            value: lang == 'br',
+            activeColor: Colors.orange.shade300,
+            inactiveThumbColor: Colors.orange.shade300,
+            onChanged: (value) {
+              setState(() {
+                lang = lang == 'br' ? 'us' : 'br';
+              });
+            }),
+        Text(
+          'PT-BR',
+          style: TextStyle(
+            color: textColor,
+            fontSize: 16,
+          ),
+        ),
+      ],
     );
   }
 
@@ -302,6 +320,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       );
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final isMobile = size.width < 526;
     return Scaffold(
       body: DecoratedBox(
         decoration: BoxDecoration(
@@ -603,6 +623,14 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                         ),
                       ],
                     ),
+                  ),
+                  Visibility(
+                    visible: isMobile,
+                    child: gitHubAndLinkedIn(direction: Axis.horizontal),
+                  ),
+                  Visibility(
+                    visible: isMobile,
+                    child: switchLanguage(textColor: Colors.black),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
